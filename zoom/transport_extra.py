@@ -164,20 +164,36 @@ def frame_hold_update():
     bpy.context.scene.frame_current += direction
     return transport_hold_state["interval"]
 
-def transport_extra_receive(address, *args):
+def handle_transport_hold(address, args):
+    """
+    Nuevo manejador para los comandos de mantener para avance/retroceso rápido.
+    Reemplaza a transport_extra_receive.
+    """
     inhibited = transporte_inhibido()
     if inhibited is True or (isinstance(inhibited, set) and 'hold' in inhibited):
         return
-    if address == "/star_hold_next":
-        transport_hold_state.update({"start_time": time.time(), "next": True, "prev": False}); bpy.app.timers.register(start_hold_delay)
-    elif address == "/end_hold_next":
-        if transport_hold_state.get("timer") and bpy.app.timers.is_registered(transport_hold_state["timer"]): bpy.app.timers.unregister(transport_hold_state["timer"])
-        transport_hold_state.update({"next": False, "timer": None})
-    elif address == "/star_hold_previous":
-        transport_hold_state.update({"start_time": time.time(), "prev": True, "next": False}); bpy.app.timers.register(start_hold_delay)
-    elif address == "/end_hold_previous":
-        if transport_hold_state.get("timer") and bpy.app.timers.is_registered(transport_hold_state["timer"]): bpy.app.timers.unregister(transport_hold_state["timer"])
-        transport_hold_state.update({"prev": False, "timer": None})
+
+    if not args or not isinstance(args[0], bool):
+        return
+
+    is_pressed = args[0]
+
+    if is_pressed:
+        direction = 'next' if address == "/hold_next" else 'prev'
+
+        if direction == 'next':
+            transport_hold_state.update({"start_time": time.time(), "next": True, "prev": False})
+        else: # 'prev'
+            transport_hold_state.update({"start_time": time.time(), "prev": True, "next": False})
+
+        bpy.app.timers.register(start_hold_delay)
+
+    else: # Botón liberado
+        timer = transport_hold_state.get("timer")
+        if timer and bpy.app.timers.is_registered(timer):
+            bpy.app.timers.unregister(timer)
+
+        transport_hold_state.update({"next": False, "prev": False, "timer": None})
 
 def start_hold_delay():
     inhibited = transporte_inhibido()
