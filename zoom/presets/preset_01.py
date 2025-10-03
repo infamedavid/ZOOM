@@ -2,7 +2,7 @@
 
 '''
 un preset es una herramienta , aoutomatizacion creada con la finalidad
-de anadir nuevas funcionalizades a zoom sin necesidad de modificar su core
+de anadir nuevas funcionalizades a zoom sin necesidad de modificar su core.
 '''
 
 from .. import osc_feedback, state, macros
