@@ -338,10 +338,8 @@ def handle_snap_target_toggle(address, args):
         print(f"OSC VSE: error calling strips_tools._rebuild_snap_targets(): {e}")
 
 command_handler_map = {
-    "/star_hold_previous": transport_extra.transport_extra_receive,
-    "/end_hold_previous": transport_extra.transport_extra_receive,
-    "/star_hold_next": transport_extra.transport_extra_receive,
-    "/end_hold_next": transport_extra.transport_extra_receive,
+    "/hold_next": transport_extra.handle_transport_hold,
+    "/hold_previous": transport_extra.handle_transport_hold,
     "/toggle_play": transport_extra.handle_play_logic,
     "/shift": transport_extra.handle_shift_logic,
     "/Jog": transport_extra.handle_jog_logic,
