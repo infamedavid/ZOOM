@@ -1,34 +1,43 @@
 # Preset 5 Slide Out
 
+preset_info = {
+    "name": "Slide Out",
+    "author": "Infame",
+    "version": (1, 0, 0),
+    "blender": (4, 1, 0),
+    "zoom": (1, 0, 0),
+    "description": "TRANSITION A>B. CLIP A SLIDES OUT (NO FADE)."
+}
+
 """
-PRESET 05: SALIDA DESLIZANTE (Slide Out) - 4 DIRECCIONES
+- Requirements:
+1. Select exactly two strips.
+2. Clip A (the one being output) must be on a channel ABOVE Clip B.
+3. The strips must overlap by at least 2 frames.
 
-- Descripción:
-  Crea un efecto de salida para el Clip A, que se desliza desde el centro
-  de la pantalla hacia fuera durante el solapamiento con el Clip B.
-  No se aplica fundido de opacidad: el clip se mueve físicamente fuera.
+- Configuration (Hardcoded):
+The 'SLIDE_DIRECTION' variable controls the slide-out direction.
+Possible values: 'LEFT', 'RIGHT', 'TOP', 'BOTTOM'.
 
-- Requisitos:
-  1. Seleccionar exactamente dos strips.
-  2. El Clip A (el que sale) debe estar en un canal SUPERIOR al Clip B.
-  3. Los strips deben tener un solapamiento de al menos 2 frames.
-
-- Configuración (Hardcoded):
-  La variable 'SLIDE_DIRECTION' controla la dirección de salida.
-  Valores posibles: 'LEFT', 'RIGHT', 'TOP', 'BOTTOM'.
-
-- Códigos de Error:
-  - E-SEL: Error de Selección (deben estar seleccionados 2 strips).
-  - E-OVRL: Error de Overlap (no hay solapamiento suficiente).
-  - E-CHAN: Error de Canal (el Clip A no está en un canal superior).
+- Error Codes:
+- E-SEL: Selection error (two strips must be selected).
+- E-OVRL: Overlap error (not enough overlap).
+- E-CHAN: Channel Error (Clip A is not on a higher channel).
 """
 
 import bpy
 from .. import osc_feedback
 
+#+++++++++++++++++++++++
+# --- CONFIGURATIÓN ---+
+#+++++++++++++++++++++++
+
 SLIDE_DIRECTION = 'RIGHT'
 SLIDE_DISTANCE_FACTOR = 1.0
 SLIDE_MARGIN_PX = 64
+
+#+++++++++++++++++++++++
+
 
 def _set_linear_interpolation(strip_name, path, frames):
     anim = bpy.context.scene.animation_data

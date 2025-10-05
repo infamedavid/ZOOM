@@ -1,39 +1,45 @@
 # Preset 2 Zoom out entrace
 
+preset_info = {
+    "name": "Zoom Out Entrance",
+    "author": "Infame",
+    "version": (1, 0, 0),
+    "blender": (4, 1, 0),
+    "zoom": (1, 0, 0),
+    "description": "CROSSFADE A>B. CLIP B ENTER WITH A ZOOM OUT."
+}
+
 """
-PRESET 02: TRANSICIÓN CON ZOOM OUT
 
-- Descripción:
-  Aplica un efecto de entrada al segundo clip (Clip B) basado en el
-  solapamiento (overlap) con el primer clip (Clip A).
-  El Clip B aparece con un fundido y simultáneamente hace un zoom out.
+- Requirements:
+1. Select exactly two strips.
+2. The strips must overlap by at least 2 frames.
 
-- Requisitos:
-  1. Seleccionar exactamente dos strips.
-  2. Los strips deben tener un solapamiento de al menos 2 frames.
+- Configuration (Hardcoded):
+The 'ZOOM_ANIMATION_PERCENTAGE' variable within this file controls
+the duration of the zoom animation as a percentage of the total overlap.
+(e.g., 0.66 = the zoom animation lasts 66% of the fade).
 
-- Configuración (Hardcoded):
-  La variable 'ZOOM_ANIMATION_PERCENTAGE' dentro de este archivo controla
-  la duración de la animación del zoom como un porcentaje del overlap total.
-  (ej. 0.66 = la animación de zoom dura el 66% del fundido).
+- Error Codes:
+- E-SEL: Selection Error. Make sure you have two strips selected.
+- E-OVRL: Overlap Error. Make sure the strips overlap by at least 2 frames.
 
-- Códigos de Error:
-  - E-SEL: Error de Selección. Asegúrate de tener 2 strips seleccionados.
-  - E-OVRL: Error de Overlap. Asegúrate de que los strips se solapan
-    por al menos 2 frames.
 """
 
 import bpy
 from .. import osc_feedback
 
-# --- CONFIGURACIÓN ---
+#+++++++++++++++++++++++
+# --- CONFIGURATIÓN ---+
+#+++++++++++++++++++++++
+
 ZOOM_ANIMATION_PERCENTAGE = 0.66
 
-# --- FUNCIÓN AUXILIAR ROBUSTA PARA KEYFRAMES (VERSIÓN FINAL) ---
+#+++++++++++++++++++++++
+
+
 def _create_linear_animation(owner_strip, target_object, data_path, start_frame, end_frame, start_val, end_val):
-    """
-    Inserta keyframes de forma segura, diferenciando entre el objeto a animar y el dueño de la animación.
-    """
+
     try:
         setattr(target_object, data_path, start_val)
         target_object.keyframe_insert(data_path=data_path, frame=start_frame)
@@ -43,7 +49,7 @@ def _create_linear_animation(owner_strip, target_object, data_path, start_frame,
         bpy.context.view_layer.update()
 
         if owner_strip.animation_data and owner_strip.animation_data.action:
-            # Construir el data_path completo para el f-curve
+
             fcurve_path = data_path
             if target_object != owner_strip:
                 fcurve_path = f"{target_object.path_from_id()}.{data_path}"

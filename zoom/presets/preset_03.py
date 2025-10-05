@@ -1,33 +1,39 @@
 # Preset 3 Zoom in on exit
 
+preset_info = {
+    "name": "Zoom In Exit",
+    "author": "Infame",
+    "version": (1, 0, 0),
+    "blender": (4, 1, 0),
+    "zoom": (1, 0, 0),
+    "description": "CROSSFADE A>B. CLIP A OUT WITH A ZOOM IN."
+}
+
 """
-PRESET 03: TRANSICIÓN CON ZOOM IN ("Zoom In Exit")
+- Requirements:
+1. Select exactly two strips.
+2. The strips must overlap by at least 2 frames.
 
-- Descripción:
-  Aplica un efecto de salida al primer clip (Clip A) basado en el
-  solapamiento (overlap) con el segundo clip (Clip B).
-  Se crea un crossfade estándar (A se desvanece, B aparece) y,
-  simultáneamente, el Clip A hace una animación de Zoom In.
+- Configuration (Hardcoded):
+The variable 'ZOOM_START_PERCENTAGE' controls at what point in the overlap the zoom animation begins.
+(e.g., 0.40 = the zoom animation starts 40% of the way through the fade and lasts until the end).
 
-- Requisitos:
-  1. Seleccionar exactamente dos strips.
-  2. Los strips deben tener un solapamiento de al menos 2 frames.
-
-- Configuración (Hardcoded):
-  La variable 'ZOOM_START_PERCENTAGE' controla en qué punto del
-  overlap comienza la animación de zoom.
-  (ej. 0.40 = la animación de zoom empieza cuando ha transcurrido
-   el 40% del fundido y dura hasta el final).
-
-- Códigos de Error:
-  - E-SEL: Error de Selección.
-  - E-OVRL: Error de Overlap.
+- Error Codes:
+- E-SEL: Selection Error.
+- E-OVRL: Overlap Error.
 """
 
 import bpy
 from .. import osc_feedback
 
+#+++++++++++++++++++++++
+# --- CONFIGURATIÓN ---+
+#+++++++++++++++++++++++
+
 ZOOM_START_PERCENTAGE = 0.0
+
+#+++++++++++++++++++++++
+
 
 def _set_linear_interpolation(strip_name, path):
     anim = bpy.context.scene.animation_data
