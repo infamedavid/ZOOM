@@ -47,20 +47,21 @@ def _get_local_ip():
         # Obtiene la IP que el sistema usaría para esta conexión
         ip = s.getsockname()[0]
     except Exception:
-        ip = "127.0.0.1"  # Fallback si no se puede determinar
+        ip = "127.0.0.1"  
     finally:
         if s:
             s.close()
     return ip
 
 # ---  MONITOR DE ESTADO ---
+
 def monitor_addon_state():
     """
     Timer que comprueba periódicamente si el estado real de la herramienta
     activa en Blender coincide con el último estado enviado por feedback.
     Si no coincide, fuerza una actualización.
     """
-    current_tool_name = "        " # Default para inactivo
+    current_tool_name = "        " 
     
     custom_name = state.control_state.get('active_tool_custom_name')
     if custom_name:
@@ -277,6 +278,7 @@ class OSC_PT_VSEPanel(bpy.types.Panel):
 server_thread_info = {"server": None, "thread": None}
 
 # -------------------- HANDLERS OSC PARA MIRROR --------------------
+
 def handle_auto_mirror(address, args):
     if not args: return
     val = args[0]
@@ -515,6 +517,18 @@ def call_logic_on_main_thread(handler_func, address, args):
 
 def handle_osc_command(address, *args):
 
+    if address.endswith("_info") and address.startswith("/macro/"):
+        if not args or not args[0]: return 
+        try:
+            num_str = address.split('/')[-1].replace('_info', '')
+            num = int(num_str)
+            description = macros.get_preset_description(num)
+            osc_feedback.send("/macro/info_text", description)
+        except (ValueError, IndexError):
+            osc_feedback.send("/macro/info_text", "Error")
+        return # Terminamos aquí, no continuamos procesando
+
+    # --- LÓGICA PARA EJECUTAR MACROS ---
     if address.startswith("/macro/"):
         try:
             num = int(address.split("/")[-1])
@@ -526,6 +540,7 @@ def handle_osc_command(address, *args):
         return
 
     # --- manejo especial de multicam ---
+
     if address.startswith("/CAM/"):
         bpy.app.timers.register(
             functools.partial(call_logic_on_main_thread, bl_cam.handle_cam_index, address, args)
@@ -565,7 +580,7 @@ def handle_osc_command(address, *args):
         return
 
     if address.startswith("/add_"):
-        # Comprobar si es para un modificador antes de pasarlo a 'adds.py'
+
         type_suffix = address.split('/')[-1].replace('add_', '')
         if type_suffix in modifiers.ADD_MODIFIER_MAP:
             bpy.app.timers.register(
@@ -636,7 +651,6 @@ def handle_osc_command(address, *args):
             )
             return
 
-
     if address.startswith("/modifier_"):
         op_type = address.split('/')[-1]
         global_ops = ["modifier_toggle_mute", "modifier_delete", "modifier_move_up", "modifier_move_down"]
@@ -651,7 +665,7 @@ def handle_osc_command(address, *args):
         return
     
     
-    # --- rutas export
+    # --- rutas export----
 
     if address.startswith("/export/preset/"):
         bpy.app.timers.register(
@@ -701,7 +715,6 @@ def handle_osc_command(address, *args):
         )
         return    
 
-    # Búsqueda final en el mapa de comandos genéricos
     handler_func = command_handler_map.get(address)
     if handler_func:
         bpy.app.timers.register(
@@ -725,10 +738,8 @@ class OSC_OT_ServerControl(bpy.types.Operator):
         props = context.scene.osc_vse_properties
         if self.action == 'START' and (server_thread_info["thread"] is None or not server_thread_info["thread"].is_alive()):
             try:
-                # --- INICIO: LÓGICA DE DETECCIÓN DE IP ---
-                # Detectar y guardar la IP local antes de iniciar el servidor
+
                 props.detected_ip = _get_local_ip()
-                # --- FIN: LÓGICA DE DETECCIÓN DE IP ---
 
                 server_thread = threading.Thread(target=run_server, args=(props.ip, props.port))
                 server_thread.daemon = True
@@ -748,9 +759,7 @@ class OSC_OT_ServerControl(bpy.types.Operator):
             server_thread_info.update({"server": None, "thread": None})
             props.is_server_running = False
             
-            # --- INICIO: LIMPIAR IP AL DETENER ---
             props.detected_ip = "N/A (server stopped)"
-            # --- FIN: LIMPIAR IP AL DETENER ---
 
             self.report({'INFO'}, "OSC Server stopped.")
         return {'FINISHED'}

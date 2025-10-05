@@ -10,6 +10,23 @@ import bpy
 
 from . import osc_feedback, state
 
+def get_preset_description(n):
+    """
+    Carga un módulo de preset, busca la variable 'preset_info' y devuelve
+    el valor de la clave 'description'.
+    """
+    module = _loaded_presets.get(n)
+    if not module:
+        return "NOT FOUND"
+
+    # Buscar la variable 'preset_info' en el módulo
+    if hasattr(module, 'preset_info') and isinstance(module.preset_info, dict):
+        # Devolver el valor de 'description', o un texto por defecto si no existe
+        return module.preset_info.get('description', "NO DESCRIPTION.")
+    else:
+        # Fallback por si el preset no tiene la cabecera
+        return "NO DESCRIPTION."
+
 # carpeta relativa dentro del addon
 PRESETS_REL_PATH = os.path.join(os.path.dirname(__file__), "presets")
 # cache de módulos {N: module}
