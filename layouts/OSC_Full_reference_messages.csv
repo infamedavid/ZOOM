@@ -1,0 +1,244 @@
+Category,OSC Message,Description,Handler File
+Transport & Navigation,/toggle_play,"Starts or stops playback. Plays in reverse if 'shift' is active.",transport_extra.py
+Transport & Navigation,/hold_next,"Press and hold to fast-forward frame by frame.",transport_extra.py
+Transport & Navigation,/hold_previous,"Press and hold to fast-rewind frame by frame.",transport_extra.py
+Transport & Navigation,/shift,Activates 'shift' mode (Fn) for secondary functions.,transport_extra.py
+Transport & Navigation,/Jog,Activates or deactivates Jog/Scrub mode.,transport_extra.py
+Transport & Navigation,/Jog_value,Receives the Jog value (-1.0 to 1.0) to control speed and direction.,transport_extra.py
+Transport & Navigation,/jog_relative,"Toggles the Jog's relative speed mode, which is sensitive to the project's length.",transport_extra.py
+Transport & Navigation,/timejump,Jumps to a point in the timeline based on a value from 0.0 to 1.0.,transport_extra.py
+Transport & Navigation,/timecode,Enables or disables sending timecode feedback to the control surface.,transport_extra.py
+Transport & Navigation,/esc,"Cancels playback, deactivates active tools, and reverts some operations.",transport_extra.py
+Transport & Navigation,/jump_start,Jumps to the start of the timeline.,transport_extra.py
+Transport & Navigation,/jump_end,Jumps to the end of the timeline.,transport_extra.py
+Transport & Navigation,/frame_next,Moves forward one frame.,transport_extra.py
+Transport & Navigation,/frame_prev,Moves backward one frame.,transport_extra.py
+Transport & Navigation,/key_next,Jumps to the next keyframe.,transport_extra.py
+Transport & Navigation,/key_prev,Jumps to the previous keyframe.,transport_extra.py
+Transport & Navigation,/marker_next,Jumps to the next marker.,transport_extra.py
+Transport & Navigation,/marker_prev,Jumps to the previous marker.,transport_extra.py
+Transport & Navigation,/cursor_lock,Toggles the playhead follow mode.,transport_extra.py
+Transport & Navigation,/toggle_audio,Toggles the scene's global audio on or off.,transport_extra.py
+Transport & Navigation,/toggle_audio_scrub,Toggles audio scrubbing while dragging the playhead.,transport_extra.py
+Transport & Navigation,/Fcur,Toggles the follow mode for the 'traveler' or playhead.,transport_extra.py
+Strip Selection & Filters,/Vstrip,"Activates strip navigation mode. Single-press to activate, double-press to select.",strips_extra.py
+Strip Selection & Filters,/Nstrip,Navigates to the next strip (horizontally) or increments the active tool's value.,strips_extra.py
+Strip Selection & Filters,/Pstrip,Navigates to the previous strip (horizontally) or decrements the active tool's value.,strips_extra.py
+Strip Selection & Filters,/plus,Navigates to the strip above (vertically) or increments the active tool's value.,strips_extra.py
+Strip Selection & Filters,/minus,Navigates to the strip below (vertically) or decrements the active tool's value.,strips_extra.py
+Strip Selection & Filters,/set_selection,"In navigation mode, adds or removes the 'traveler' strip from the current selection.",strips_extra.py
+Strip Selection & Filters,/cur_strip,Moves the playhead to the start (or end with shift) of the active strip.,strips_extra.py
+Strip Selection & Filters,/movie,Toggles the selection filter for Video strips.,strips_extra.py
+Strip Selection & Filters,/image,Toggles the selection filter for Image strips.,strips_extra.py
+Strip Selection & Filters,/meta,Toggles the selection filter for Meta-Strips.,strips_extra.py
+Strip Selection & Filters,/color,Toggles the selection filter for Color strips.,strips_extra.py
+Strip Selection & Filters,/text,Toggles the selection filter for Text strips.,strips_extra.py
+Strip Selection & Filters,/adjust,Toggles the selection filter for Adjustment Layers.,strips_extra.py
+Strip Selection & Filters,/speed,Toggles the selection filter for Speed strips.,strips_extra.py
+Strip Selection & Filters,/trans,Toggles the selection filter for Transitions.,strips_extra.py
+Strip Selection & Filters,/scene,Toggles the selection filter for Scene strips.,strips_extra.py
+Strip Selection & Filters,/tranf,Toggles the selection filter for Transform strips.,strips_extra.py
+Strip Selection & Filters,/mask,Toggles the selection filter for Mask strips.,strips_extra.py
+Strip Selection & Filters,/clip,Toggles the selection filter for Clip strips.,strips_extra.py
+Strip Selection & Filters,/audio,Toggles the selection filter for Audio strips.,strips_extra.py
+Strip Selection & Filters,/glow,Toggles the selection filter for Glow strips.,strips_extra.py
+Strip Selection & Filters,/blur,Toggles the selection filter for Blur strips.,strips_extra.py
+Strip Editing (General),/zoom,Activates the Zoom tool (uniform scale).,tools_extra.py
+Strip Editing (General),/posx,Activates the Position X tool.,tools_extra.py
+Strip Editing (General),/posy,Activates the Position Y tool.,tools_extra.py
+Strip Editing (General),/rot,Activates the Rotation tool.,tools_extra.py
+Strip Editing (General),/origx,Activates the Origin (pivot) X tool.,tools_extra.py
+Strip Editing (General),/origy,Activates the Origin (pivot) Y tool.,tools_extra.py
+Strip Editing (General),/alpha,Activates the Opacity (Alpha) tool.,tools_extra.py
+Strip Editing (General),/crop_l,Activates the left Crop tool.,tools_extra.py
+Strip Editing (General),/crop_r,Activates the right Crop tool.,tools_extra.py
+Strip Editing (General),/crop_t,Activates the top Crop tool.,tools_extra.py
+Strip Editing (General),/crop_b,Activates the bottom Crop tool.,tools_extra.py
+Strip Editing (General),/mirror_x,Activates the tool to flip horizontally (Flip X).,tools_extra.py
+Strip Editing (General),/mirror_y,Activates the tool to flip vertically (Flip Y).,tools_extra.py
+Strip Editing (General),/reverse,Activates the tool to reverse frame playback.,tools_extra.py
+Strip Editing (General),/saturation,Activates the color Saturation tool.,tools_extra.py
+Strip Editing (General),/multiply,Activates the color Gain (Multiply) tool.,tools_extra.py
+Strip Editing (General),/pblend,Cycles to the previous Blend Mode.,strips_extra.py
+Strip Editing (General),/nblend,Cycles to the next Blend Mode.,strips_extra.py
+Strip Editing (General),/sync_blend,Synchronizes the blend mode of all selected strips to match the active one.,strips_extra.py
+Strip Editing (General),/use_limit,"Toggles snapping to default values for tools (e.g., zoom to 1.0).",tools_extra.py
+Strip Editing (General),/key,Inserts a keyframe for the active tool's property.,bl_cam_prop.py
+Strip Editing (General),/del,"In navigation mode, removes the 'traveler' from the selection. With tools, deletes the keyframe.",strips_extra.py
+Strip Editing (General),/prev_range,Sets the preview range to the duration of the selected strips.,strips_tools.py
+Strip Editing (General),/del_range,Deletes the preview range.,strips_tools.py
+Strip Editing (General),/frame_clear,Zooms to fit the selected strips in the view.,strips_tools.py
+Strip Editing (Advanced Tools),/grab,Activates the tool to drag strips on the timeline and between channels.,strips_tools.py
+Strip Editing (Advanced Tools),/knife,Performs a soft (Ripple) cut on selected strips and enters adjustment mode.,strips_tools.py
+Strip Editing (Advanced Tools),/knife_h,Performs a hard cut on selected strips and enters adjustment mode.,strips_tools.py
+Strip Editing (Advanced Tools),/ripple,Activates the 'Heap' tool to evenly space the selected strips.,strips_advance.py
+Strip Editing (Advanced Tools),/splice,"Performs a 'Splice' cut, deleting content to the left of the playhead and entering fine-tune mode.",strips_advance.py
+Strip Editing (Advanced Tools),/insert,Activates the 'Insert' tool to insert a strip between the cuts of other strips.,strips_advance.py
+Strip Editing (Advanced Tools),/snapto,Toggles Snap mode for the 'Grab' tool.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_startstrips,Toggles snapping to the start of other strips.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_endstrips,Toggles snapping to the end of other strips.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_audiostrips,Toggles snapping to audio strips.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_mutestrips,Toggles snapping to muted strips.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_marker,Toggles snapping to markers.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_keyframe,Toggles snapping to keyframes.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_playhead,Toggles snapping to the playhead.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_start,Toggles snapping to the timeline start.,strips_tools.py
+Strip Editing (Advanced Tools),/snap_end,Toggles snapping to the timeline end.,strips_tools.py
+Strip Editing (Offset Tools),/off_start,Activates the tool to adjust the content's Offset Start.,tools_extra.py
+Strip Editing (Offset Tools),/off_end,Activates the tool to adjust the content's Offset End.,tools_extra.py
+Strip Editing (Offset Tools),/slip,"Activates the 'Slip' tool, which moves the content within the strip's boundaries.",offsets_tools.py
+Strip Editing (Offset Tools),/push,"Activates the 'Push' tool, which lengthens/shortens a strip's end and ripples subsequent strips.",offsets_tools.py
+Strip Editing (Offset Tools),/pull,"Activates the 'Pull' tool, which lengthens/shortens a strip's start and ripples subsequent strips.",offsets_tools.py
+Strip Editing (Offset Tools),/sleat,"Activates the 'Sleat' tool, a 'Roll Edit' that moves the cut point between two strips.",offsets_tools.py
+Strip Editing (Offset Tools),/slide,"Activates the 'Slide' tool, which moves a strip while adjusting the duration of its neighbors.",offsets_tools.py
+Strip & Effect Creation,/add_movie,Opens the file browser to add a Video strip.,adds.py
+Strip & Effect Creation,/add_image,Opens the file browser to add an Image strip.,adds.py
+Strip & Effect Creation,/add_imseq,Opens the file browser to add an Image Sequence.,adds.py
+Strip & Effect Creation,/add_audio,Opens the file browser to add an Audio strip.,adds.py
+Strip & Effect Creation,/add_scene,Opens the file browser to add a Scene strip.,adds.py
+Strip & Effect Creation,/add_text,Adds a Text strip.,adds.py
+Strip & Effect Creation,/add_color,Adds a Color strip.,adds.py
+Strip & Effect Creation,/add_adjust,Adds an Adjustment Layer.,adds.py
+Strip & Effect Creation,/add_marker,Adds a marker at the playhead position.,adds.py
+Strip & Effect Creation,/add_meta,"Creates a Meta-Strip from the selection, or separates a Meta-Strip if only one is selected.",adds.py
+Strip & Effect Creation,/add_fx/blur,Adds a Gaussian Blur effect to the selected strip.,adds_fx.py
+Strip & Effect Creation,/add_fx/glow,Adds a Glow effect to the selected strip.,adds_fx.py
+Strip & Effect Creation,/add_fx/speed,Adds a Speed control effect to the selected strip.,adds_fx.py
+Strip & Effect Creation,/add_fx/transform,Adds a Transform effect to the selected strip.,adds_fx.py
+Strip & Effect Creation,/add_fx/color,Adds a Color modifier to the selected strip.,adds_fx.py
+Strip & Effect Creation,/add_fx/cross,Adds a Crossfade transition between two selected strips.,adds_fx.py
+Strip & Effect Creation,/add_fx/gamma_cross,Adds a Gamma Cross transition between two selected strips.,adds_fx.py
+Strip & Effect Creation,/add_fx/wipe,Adds a Wipe transition between two selected strips.,adds_fx.py
+Strip & Effect Creation,/add_fx/adjustment,Adds an Adjustment Layer over the selection or the entire timeline.,adds_fx.py
+Strip & Effect Creation,/add_fx/multicam,Adds a Multicam selector over the selection or the entire timeline.,adds_fx.py
+Grouping & Mirroring,/set_group,"In navigation mode, creates a group from the selection (including the 'traveler').",strips_extra.py
+Grouping & Mirroring,/ungroup,In navigation mode, removes the selected strips from their groups.,strips_extra.py
+Grouping & Mirroring,/select_grouped,Expands the selection to include all members of the involved groups.,strips_extra.py
+Grouping & Mirroring,/display_groups,Shows or hides group colors on the timeline.,strips_extra.py
+Grouping & Mirroring,/group_from_new,Finds newly added strips and tries to group them automatically by similarity (Auto Mirror).,groups_logic.py
+Grouping & Mirroring,/auto_mirror,Toggles automatic grouping (Auto Mirror) when moving or adding strips.,osc_server.py
+Grouping & Mirroring,/mirror_tolerance,Sets the time tolerance in seconds for Auto Mirror.,osc_server.py
+Grouping & Mirroring,/mirror_range,Sets the range of adjacent channels to consider for Auto Mirror.,osc_server.py
+Grouping & Mirroring,/select_last_grouped,Toggles automatic selection of the last created group.,strips_extra.py
+Grouping & Mirroring,/select_last_trigger,Manually selects the last group that was created.,strips_extra.py
+Grouping & Mirroring,/select_grouped_on_exit,Toggles whether to expand selection to groups when exiting navigation mode.,strips_tools.py
+Fades,/fade_in_cursor,Creates a fade-in from the strip's start to the playhead position.,fades.py
+Fades,/fade_out_cursor,Creates a fade-out from the playhead position to the strip's end.,fades.py
+Fades,/crossfade_overlap,Creates a crossfade in the overlapping areas of the selected strips.,fades.py
+Fades,/fade_curve,Toggles between LINEAR and BEZIER fade curves.,fades.py
+Camera & Multicam (3D & FX),/CAM/[N],In Preview mode, changes the active camera. In AutoCut mode, performs a cut and switches to camera N.,bl_cam.py
+Camera & Multicam (3D & FX),/camera/resync_database,Rebuilds the internal database of cameras and strips.,bl_cam.py
+Camera & Multicam (3D & FX),/camera/autocut_toggle,Toggles between Preview mode and AutoCut mode for /CAM/N commands.,bl_cam.py
+Camera & Multicam (3D & FX),/multicam_cut,Toggles cut mode for the Multicam FX tool.,tools_fx.py
+Camera & Multicam (3D & FX),/multicam/[N],Switches the active camera of the Multicam FX strip to camera N.,tools_fx.py
+Camera Properties (3D),/camera/container,Enables or disables animation 'containers' (Empties) for cameras.,bl_cam_prop.py
+Camera Properties (3D),/camera/cleanup_layer,Deletes all animation 'containers' from the scene.,bl_cam_prop.py
+Camera Properties (3D),/dolly,Activates the tool to move the camera forward/backward (Dolly).,bl_cam_prop.py
+Camera Properties (3D),/truck,Activates the tool to move the camera sideways (Truck).,bl_cam_prop.py
+Camera Properties (3D),/pedestal,Activates the tool to move the camera vertically (Pedestal).,bl_cam_prop.py
+Camera Properties (3D),/pan,Activates the tool to rotate the camera horizontally (Pan).,bl_cam_prop.py
+Camera Properties (3D),/tilt,Activates the tool to rotate the camera vertically (Tilt).,bl_cam_prop.py
+Camera Properties (3D),/roll,Activates the tool to rotate the camera on its Z-axis (Roll).,bl_cam_prop.py
+Camera Properties (Optics),/focal_length,Activates the tool to adjust the camera's focal length (Lens).,bl_cam_optics.py
+Camera Properties (Optics),/shift_x,Activates the tool to adjust the horizontal lens shift (Shift X).,bl_cam_optics.py
+Camera Properties (Optics),/shift_y,Activates the tool to adjust the vertical lens shift (Shift Y).,bl_cam_optics.py
+Camera Properties (Optics),/use_dof,Toggles Depth of Field on or off.,bl_cam_optics.py
+Camera Properties (Optics),/dof_distance,Activates the tool to adjust the Focus Distance.,bl_cam_optics.py
+Camera Properties (Optics),/fstop,Activates the tool to adjust the aperture (F-Stop).,bl_cam_optics.py
+Camera Properties (Optics),/dia_blades,Activates the tool to adjust the number of aperture blades.,bl_cam_optics.py
+Camera Properties (Optics),/dia_rot,Activates the tool to adjust the aperture rotation.,bl_cam_optics.py
+Camera Properties (Optics),/dist_ratio,Activates the tool to adjust the anamorphic distortion (Ratio).,bl_cam_optics.py
+Audio Properties,/volume,Activates the volume adjustment tool.,audio_internal.py
+Audio Properties,/audio_pan,Activates the stereo panning tool.,audio_internal.py
+Audio Properties,/use_alimit,Toggles snapping to default values for audio tools.,audio_internal.py
+Strip Modifiers,/strip/modifier/inspect/[N],Selects the modifier at position N on the active strip and sends its type as feedback.,modifiers.py
+Strip Modifiers,/add_brightcontrast,Adds a Bright/Contrast modifier to the active strip.,modifiers.py
+Strip Modifiers,/add_color_balance,Adds a Color Balance modifier to the active strip.,modifiers.py
+Strip Modifiers,/add_white_balance,Adds a White Balance modifier to the active strip.,modifiers.py
+Strip Modifiers,/add_curves,Adds a Curves modifier to the active strip.,modifiers.py
+Strip Modifiers,/add_hue_correct,Adds a Hue Correct modifier to the active strip.,modifiers.py
+Strip Modifiers,/add_equalizer,Adds an Equalizer modifier to the active strip.,modifiers.py
+Strip Modifiers,/modifier_toggle_mute,Mutes or unmutes the currently inspected modifier.,modifiers.py
+Strip Modifiers,/modifier_delete,Deletes the currently inspected modifier.,modifiers.py
+Strip Modifiers,/modifier_move_up,Moves the inspected modifier up one position in the stack.,modifiers.py
+Strip Modifiers,/modifier_move_down,Moves the inspected modifier down one position in the stack.,modifiers.py
+Strip Modifiers,/modifier_lift,Controls the shadows color (Lift/Offset) with an XY pad.,modifiers.py
+Strip Modifiers,/modifier_gamma,Controls the midtones color (Gamma/Power) with an XY pad.,modifiers.py
+Strip Modifiers,/modifier_gain,Controls the highlights color (Gain/Slope) with an XY pad.,modifiers.py
+Strip Modifiers,/modifier_lift_master,Controls the luminance (Value) of the shadows.,modifiers.py
+Strip Modifiers,/modifier_gamma_master,Controls the luminance (Value) of the midtones.,modifiers.py
+Strip Modifiers,/modifier_gain_master,Controls the luminance (Value) of the highlights.,modifiers.py
+Strip Modifiers,/modifier_bright,Controls the Brightness value of the Bright/Contrast modifier.,modifiers.py
+Strip Modifiers,/modifier_contrast,Controls the Contrast value of the Bright/Contrast modifier.,modifiers.py
+Strip Modifiers,/modifier_white_r,Controls the Red component of the White Balance modifier.,modifiers.py
+Strip Modifiers,/modifier_white_g,Controls the Green component of the White Balance modifier.,modifiers.py
+Strip Modifiers,/modifier_white_b,Controls the Blue component of the White Balance modifier.,modifiers.py
+Strip Modifiers,/curve_[C/R/G/B]_node[1-5],Selects a node on a curve channel. If it doesn't exist, it creates it.,modifiers.py
+Strip Modifiers,/curve_[C/R/G/B]_xy,Moves the selected node on the curve's XY plane.,modifiers.py
+Strip Modifiers,/curve_[C/R/G/B]_reset,Resets the selected node's position to its default value.,modifiers.py
+Strip Modifiers,/curve_[C/R/G/B]_delete,Deletes the selected intermediate node.,modifiers.py
+Strip Modifiers,/eq/band/[1-3],Adjusts the frequency range of one of the 3 equalizer bands.,modifiers.py
+Strip Modifiers,/eq/reset_all,Resets all equalizer bands to their default values.,modifiers.py
+Strip Effects (FX),/strip_fx/speed,Activates the tool to adjust the active parameter of the Speed effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/sp_next,Cycles to the next speed control method (Multiply, Stretch, etc.).,tools_fx.py
+Strip Effects (FX),/strip_fx/sp_prev,Cycles to the previous speed control method.,tools_fx.py
+Strip Effects (FX),/strip_fx/sync_sp_method,Requests the current state of the speed control method.,tools_fx.py
+Strip Effects (FX),/strip_fx/sp_ajust,"In 'Multiply' mode, recalculates the input strip's duration to match the effect's.",tools_fx.py
+Strip Effects (FX),/strip_fx/sp_interpolate,Toggles frame interpolation in the Speed effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_type_next,Cycles to the next Wipe transition type.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_type_prev,Cycles to the previous Wipe transition type.,tools_fx.py
+Strip Effects (FX),/strip_fx/sync_wipetype,Requests the current state of the Wipe transition type.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_type,Inserts a keyframe on the Wipe transition type.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_direction,Toggles the Wipe direction (IN/OUT).,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_default_fade,Toggles the Wipe's default fade.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_blur,Activates the tool to adjust the blur width of the Wipe's edge.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_angle,Activates the tool to adjust the Wipe's angle.,tools_fx.py
+Strip Effects (FX),/strip_fx/wipe_fader,Activates the tool to manually animate the Wipe's progress.,tools_fx.py
+Strip Effects (FX),/strip_fx/cross_default_fade,Toggles the Crossfade's default fade.,tools_fx.py
+Strip Effects (FX),/strip_fx/cross_fader,Activates the tool to manually animate the Crossfade's progress.,tools_fx.py
+Strip Effects (FX),/strip_fx/blur_x,Activates the tool to adjust the X blur of the Blur effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/blur_y,Activates the tool to adjust the Y blur of the Blur effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/glow_only_boost,Toggles whether the Glow effect shows only the glow or the combined image.,tools_fx.py
+Strip Effects (FX),/strip_fx/glow_threshold,Activates the tool to adjust the Glow's luminance threshold.,tools_fx.py
+Strip Effects (FX),/strip_fx/glow_clamp,Activates the tool to adjust the Glow's clamp (brightness limit).,tools_fx.py
+Strip Effects (FX),/strip_fx/glow_boost,Activates the tool to adjust the Glow's boost factor (intensity).,tools_fx.py
+Strip Effects (FX),/strip_fx/glow_blur,Activates the tool to adjust the Glow's blur radius.,tools_fx.py
+Strip Effects (FX),/strip_fx/glow_quality,Activates the tool to adjust the Glow's quality (iterations).,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_inter,Cycles through the interpolation modes of the Transform effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_inter_sync,Requests the current state of the interpolation mode.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_unit,Toggles the translation unit (pixels or percent).,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_unit_sync,Requests the current state of the translation unit.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_uniform_scale,Activates the tool to toggle uniform scaling.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_pos_x,Activates the tool to adjust Position X of the Transform effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_pos_y,Activates the tool to adjust Position Y of the Transform effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_scale_x,Activates the tool to adjust Scale X of the Transform effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_scale_y,Activates the tool to adjust Scale Y of the Transform effect.,tools_fx.py
+Strip Effects (FX),/strip_fx/transf_rot,Activates the tool to adjust Rotation of the Transform effect.,tools_fx.py
+Channels (Mute/Lock),/channel_lock/[N],Toggles the Lock state of channel N.,channels.py
+Channels (Mute/Lock),/channel_mute/[N],Toggles the Mute state of channel N.,channels.py
+Markers,/mark/translate,Activates the tool to move the marker under the playhead.,markers.py
+Markers,/mark/delete,Deletes the marker under the playhead.,markers.py
+Export & Render,/render,Starts rendering the animation.,exports.py
+Export & Render,/export/play_render,Plays back the last rendered animation.,exports.py
+Export & Render,/export/preset/[name],Applies a predefined export preset (e.g., /export/preset/youtube_1080p_sdr).,exports.py
+Export & Render,/export/scale/[percentage],Sets the render resolution scale (e.g., /export/scale/50 for 50%).,exports.py
+Quick Commands,/quick_select_next,Selects the next strip, respecting active filters.,quicks.py
+Quick Commands,/quick_select_prev,Selects the previous strip, respecting active filters.,quicks.py
+Quick Commands,/quick_delete,"Deletes the current selection and intelligently selects the previous (or next) strip of the same type.",quicks.py
+Quick Commands,/quick_type_lock,Toggles the 'same type' filter for quick selection.,quicks.py
+Quick Commands,/quick_channel_lock,Toggles the 'same channel' filter for quick selection.,quicks.py
+Macros & System,/macro/[N],Executes macro preset number N.,macros.py
+Macros & System,/macro/[N]_info,Requests the description for macro N, which is sent back to /macro/info_text.,macros.py
+Macros & System,/key_auto,Toggles Blender's Auto-Keyframing mode.,tools_extra.py
+Simple Commands,/undo,Undoes the last action.,simple_commands.py
+Simple Commands,/redo,Redoes the last undone action.,simple_commands.py
+Simple Commands,/copy,Copies the selected strips to the clipboard.,simple_commands.py
+Simple Commands,/paste,Pastes the strips from the clipboard at the playhead position.,simple_commands.py
+Simple Commands,/duplicate,Duplicates the selected strips.,simple_commands.py
+Simple Commands,/toggle_mute,Toggles the Mute state of the selected strips.,simple_commands.py
+Simple Commands,/toggle_lock,Toggles the Lock state of the selected strips.,simple_commands.py
+Simple Commands,/save,Saves the current .blend file.,simple_commands.py
+Simple Commands,/save_incremental,Saves a new version of the file with an incremented number.,simple_commands.py
+Simple Commands,/edit_meta,Enters or exits edit mode for a Meta-Strip.,simple_commands.py
+Simple Commands,/set_start,Sets the current frame as the timeline start.,simple_commands.py
+Simple Commands,/set_end,Sets the current frame as the timeline end.,simple_commands.py
