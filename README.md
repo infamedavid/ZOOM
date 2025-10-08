@@ -1,5 +1,8 @@
 # 🎬 ZOOM for Blender VSE
 
+![ZOOM](image/logo.png)
+
+
 ### *Tactile, fast, and interactive video editing — powered by OSC.*
 
 ---
