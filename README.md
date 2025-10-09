@@ -64,6 +64,18 @@ ZOOM bridges Blender’s technical flexibility with the **speed and feel** of pr
 
 ---
 
+Get the Editor's edition Layyout at
+
+https://patchstorage.com/zoom-editor-layout/
+
+## ZOOM Editor Edition 
+
+Focused on editing.
+Includes the full addon, core OSC control, and a simple TouchOSC layout designed for cutting, trimming, and navigating — no camera control or preset macros.
+Perfect for discovering the tactile workflow inside Blender’s VSE.
+
+---
+
 ## 📡 OSC Reference
 
 A complete list of OSC messages is in `docs/OSC_Message_Reference.md`.
@@ -106,15 +118,15 @@ If you want the **ready-to-use package** (manual, OSC installer, and TouchOSC la
 A complete creative workstation for the VSE — and a way to support its ongoing development.This edition unlocks the full experience of ZOOM.
 It expands the editing workflow with advanced tools, feedback integration, and camera control — everything tuned for smooth, tactile precision.
 
-* **A multi-page TouchOSC layout with dedicated sections for tools, multicam, audio, and macros.
+* A multi-page TouchOSC layout with dedicated sections for tools, multicam, audio, and macros.
 
-* **A one-click OSC installer, so setup is effortless.
+* A one-click OSC installer, so setup is effortless.
 
-* **A fully illustrated instalation guide and reference manual  to guide every feature.
+* A fully illustrated instalation guide and reference manual  to guide every feature.
 
-* **Camera and scene tools, feedback display, and preset library for faster, more expressive editing.
+* Camera and scene tools, feedback display, and preset library for faster, more expressive editing.
 
-* **And priority access to updates and new modules as ZOOM grows.
+* And priority access to updates and new modules as ZOOM grows.
 
 More than an upgrade — it’s a way to support the project and help bring tactile editing deeper into Blender.
 
