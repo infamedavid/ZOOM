@@ -99,7 +99,7 @@ See `LICENSE.txt` for details.
 ZOOM is open-source and free on GitHub.
 If you want the **ready-to-use package** (manual, OSC installer, and TouchOSC layout), grab it on Gumroad for a small contribution:
 
-👉 [Get ZOOM Complete on Gumroad](https://gumroad.com/yourlinkhere)
+👉 [Get ZOOM Supporter Edition](https://gumroad.com/yourlinkhere)
 
 Your support funds future development 
 
