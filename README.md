@@ -103,6 +103,25 @@ If you want the **ready-to-use package** (manual, OSC installer, and TouchOSC la
 
 Your support funds future development 
 
+##ZOOM Supporter Edition
+
+A complete creative workstation for the VSE — and a way to support its ongoing development.This edition unlocks the full experience of ZOOM.
+It expands the editing workflow with advanced tools, feedback integration, and camera control — everything tuned for smooth, tactile precision.
+
+You’ll find:
+
+A multi-page TouchOSC layout with dedicated sections for tools, multicam, audio, and macros.
+
+A one-click OSC installer, so setup is effortless.
+
+A fully illustrated instalation guide and reference manual  to guide every feature.
+
+Camera and scene tools, feedback display, and preset library for faster, more expressive editing.
+
+And priority access to updates and new modules as ZOOM grows.
+
+More than an upgrade — it’s a way to support the project and help bring tactile editing deeper into Blender.
+
 ---
 
 ## 🧑‍💻 Credits
@@ -112,4 +131,4 @@ Blender, TouchOSC, and Python-OSC are trademarks of their respective owners.
 
 ---
 
->
+:>
