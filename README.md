@@ -64,7 +64,7 @@ ZOOM bridges Blender’s technical flexibility with the **speed and feel** of pr
 
 ---
 
-Get the Editor's edition Layyout at
+Get the Editor's edition Layout at
 
 https://patchstorage.com/zoom-editor-layout/
 
