@@ -106,12 +106,11 @@ See `LICENSE.txt` for details.
 
 ---
 
-## 🤝 Support Development
+## 🤝 Supporter Edition
 
-ZOOM is open-source and free on GitHub.
-If you want the **ready-to-use package** (manual, OSC installer, and TouchOSC layout), grab it on Gumroad for a small contribution:
+If you want the support the development please grab it on Gumroad for a small contribution:
 
-👉 [Get ZOOM Supporter Edition](https://infamedavid.gumroad.com/l/zoom)
+ [Get ZOOM Supporter Edition](https://infamedavid.gumroad.com/l/zoom)
 
 ## ZOOM Supporter Edition
 
@@ -127,6 +126,8 @@ It expands the editing workflow with advanced tools, feedback integration, and c
 * Camera and scene tools, feedback display, and preset library for faster, more expressive editing.
 
 * And priority access to updates and new modules as ZOOM grows.
+
+ * A "buid your own Macros" Tutorial is included in the manual
 
 More than an upgrade — it’s a way to support the project and help bring tactile editing deeper into Blender.
 
