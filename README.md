@@ -95,7 +95,7 @@ Example commands:
 
 * 🔊 **v2:** Reaper integration for full audio workflow
 * 🎚️ Standalone Android control app
-* 🎞️ And a Secret game cahnger module
+* 🎞️ And a Secret game changer module ^_^
 
 ---
 
